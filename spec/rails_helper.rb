@@ -69,6 +69,7 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+  
   VCR.configure do |config|
     config.allow_http_connections_when_no_cassette = true
     config.default_cassette_options = { allow_playback_repeats: true }
