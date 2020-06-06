@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.describe "Can get weather for a city", :vcr, type: 'request' do
 	it "when requesting 'forecast?location=denver,co'" do
 
