@@ -1,26 +1,28 @@
 require 'rails_helper'
 
 RSpec.describe "Can get weather for a city", :vcr, type: 'request' do
-	it "when requesting 'forecast?location=denver,co'" do
-
+  before(:each) do 
     get "/api/v1/forecast?location=denver,co"
 
     expect(response).to be_successful
-
-    forecast_data = JSON.parse(response.body)['data']['attributes']
     
-    expect(forecast_data).to have_key('location')
-    expect(forecast_data).to have_key('current_weather')
-    expect(forecast_data).to have_key('hourly_forecast')
-    expect(forecast_data).to have_key('weekly_forecast')
+    @forecast_data = JSON.parse(response.body)['data']['attributes']
+  end 
+  it "when requesting 'forecast?location=denver,co'" do
+    it "Can get current Weather " do 
+    
+    expect(@forecast_data).to have_key('location')
+    expect(@forecast_data).to have_key('current_weather')
+    expect(@forecast_data).to have_key('hourly_forecast')
+    expect(@forecast_data).to have_key('weekly_forecast')
 
-    location = forecast_data['location']
+    location = @forecast_data['location']
 
     expect(location).to have_key('city')
     expect(location).to have_key('state')
     expect(location).to have_key('country')
 
-    current_weather = forecast_data['current_weather']
+    current_weather = @forecast_data['current_weather']
     
     expect(current_weather).to have_key('current_forecast')
     expect(current_weather).to have_key('current_evening_forecast')
@@ -40,15 +42,18 @@ RSpec.describe "Can get weather for a city", :vcr, type: 'request' do
     expect(current_weather['current_evening_forecast']).to have_key('humidity')
     expect(current_weather['current_evening_forecast']).to have_key('visibility')
     expect(current_weather['current_evening_forecast']).to have_key('uvIndex')
+    end 
     
-    hourly_forecast = forecast_data['hourly_forecast']
+    it "Can get hourly Weather " do 
+    
+    hourly_forecast = @forecast_data['hourly_forecast']
 
     expect(hourly_forecast.count).to eq(8)
     expect(hourly_forecast[0]).to have_key('time')
     expect(hourly_forecast[0]['time']).not_to be_empty
     expect(hourly_forecast[0]).to have_key('temperature')
 
-    weekly_forecast = forecast_data['weekly_forecast']
+    weekly_forecast = @forecast_data['weekly_forecast']
 
     expect(weekly_forecast.count).to eq(5)
     expect(weekly_forecast[0]).to have_key('time')
@@ -57,5 +62,6 @@ RSpec.describe "Can get weather for a city", :vcr, type: 'request' do
     expect(weekly_forecast[0]).to have_key('summary')
     expect(weekly_forecast[0]).to have_key('temperature_high')
     expect(weekly_forecast[0]).to have_key('humidity')
+    end 
   end 
 end 

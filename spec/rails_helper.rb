@@ -76,6 +76,7 @@ RSpec.configure do |config|
     config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
     config.hook_into :webmock
     config.configure_rspec_metadata!
+    config.filter_sensitive_data("<GOOGLE_API_KEY>") { ENV['GOOGLE_API_KEY'] }
     config.filter_sensitive_data("<OWOC_API_KEY>") { ENV['OWOC_API_KEY'] }
     end
 end
