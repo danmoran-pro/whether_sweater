@@ -199,7 +199,7 @@
           null,
           null,
           1,
-          2,
+          1,
           null,
           null,
           null,
@@ -219,51 +219,8 @@
           null,
           null
         ]
-      },
-      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/controllers/api/v1/forecast_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/facades/forecast_facade.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1591597138
+    "timestamp": 1591634172
   }
 }

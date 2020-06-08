@@ -78,5 +78,6 @@ RSpec.configure do |config|
     config.configure_rspec_metadata!
     config.filter_sensitive_data("<GOOGLE_API_KEY>") { ENV['GOOGLE_API_KEY'] }
     config.filter_sensitive_data("<OWOC_API_KEY>") { ENV['OWOC_API_KEY'] }
+    config.filter_sensitive_data("<Zomato_API_KEY>") { ENV['Zomato_API_KEY'] }
     end
 end
