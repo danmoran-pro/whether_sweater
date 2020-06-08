@@ -3,7 +3,6 @@ class GoogleService
   def initialize(location, destination = nil)
     @location = location
     @destination = destination
-    binding.pry
   end 
 
   def get_location

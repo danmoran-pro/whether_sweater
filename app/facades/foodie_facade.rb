@@ -13,13 +13,14 @@ class FoodieFacade
     @distance_data = GoogleService.new(@start, @dest).get_distance
   end
   
-  def zomat
-    google_service
-    @weather_service = OwocService.new(@lat_lng).get_forecast
+  def zomato_service
+    destination_service
+    @zomato_service = ZomatoService.new(@distance_data, @craving).get_resturants
   end 
 
-  # def resturant 
-  #   weather_service
-  #   forecast = Forecast.new(@weather_service)
-  # end  
+  def resturant 
+    zomato_service
+    binding.pry
+    foodie = Foodie.new(@zomato_service)
+  end  
 end
