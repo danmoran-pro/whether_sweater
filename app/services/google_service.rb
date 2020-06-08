@@ -1,7 +1,9 @@
 class GoogleService
 
-  def initialize(location)
+  def initialize(location, destination = nil)
     @location = location
+    @destination = destination
+    binding.pry
   end 
 
   def get_location
@@ -10,6 +12,15 @@ class GoogleService
 		end
     json = JSON.parse(location_data.body, symbolize_names: true)
     lat_lng = json[:results][0][:geometry][:location]
+  end 
+
+  def get_distance
+    location_data = conn.get("directions/json") do |req|
+			req.params[:origin] = @location
+			req.params[:destination] = @destination
+		end
+    json = JSON.parse(location_data.body, symbolize_names: true)
+    distance_data = json[:routes][0][:legs][0]
   end 
   
 
