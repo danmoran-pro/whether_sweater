@@ -20,7 +20,7 @@ class FoodieFacade
 
   def resturant 
     zomato_service
-    binding.pry
-    foodie = Foodie.new(@zomato_service)
+    zomato_data = zomato_service[:restaurants][0][:restaurant][:location]
+    foodie = Foodie.new(zomato_data, @distance_data)
   end  
 end
