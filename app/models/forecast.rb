@@ -20,7 +20,7 @@ class Forecast
   end
 
   def daily_weather
-    {discription: @weather_data[:current][:weather][0][:description],
+    {description: @weather_data[:current][:weather][0][:description],
     feels_like: @weather_data[:current][:feels_like],
     humidity:  @weather_data[:current][:humidity],
     uv_index: @weather_data[:current][:uvi],
@@ -38,11 +38,11 @@ class Forecast
       end
     end
     
-    def hourly_weather
-      @weather_data[:hourly].map do |hour|
-        {time: Time.at(hour[:dt]),
-         temp: hour[:temp],
-         description: hour[:weather].first[:description]}
-    end 
+  def hourly_weather
+    @weather_data[:hourly].first(8).map do |hour|
+      {time: Time.at(hour[:dt]),
+        temp: hour[:temp],
+        description: hour[:weather].first[:description]}
+    end
   end
 end 
