@@ -35,9 +35,9 @@ RSpec.describe "Can get trail, and weather for a city", :vcr, type: 'request' do
 end 
 
 
-# UNSPLASH_API_KEY
+
 # MAPQUEST_API_KEY
-# HIKING_API_KEY
+# q1
 
 ## Instructions
 
