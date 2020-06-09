@@ -69,11 +69,14 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+  
   VCR.configure do |config|
     config.allow_http_connections_when_no_cassette = true
     config.default_cassette_options = { allow_playback_repeats: true }
     config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
     config.hook_into :webmock
     config.configure_rspec_metadata!
+    config.filter_sensitive_data("<GOOGLE_API_KEY>") { ENV['GOOGLE_API_KEY'] }
+    config.filter_sensitive_data("<OWOC_API_KEY>") { ENV['OWOC_API_KEY'] }
     end
 end
