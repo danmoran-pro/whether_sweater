@@ -1,40 +1,27 @@
 class TrailsFacade
 
-  attr_reader :location
+  attr_reader :id, :location
   
   def initialize(location)
+    @id = 1
     @location = location
-    binding.pry
   end 
 
   def google_service
     @lat_lng = GoogleService.new(@location).get_location
   end
 
-  def hiking_service
+  def trails
     google_service
-    @hike = HikingService.new(@lat_lng).get_hike
-    @hike_data = {}
-    @hike[:trails].map do |trail|
-      @hike_data[:name] = trail[:name]
-      @hike_data[:summary] = trail[:summary]
-      @hike_data[:difficulty] = trail[:difficulty]
-      @hike_data[:location] = trail[:location]
-    end 
-    @hike_data
+    hike = HikingService.new(@lat_lng).get_hike
+    hike[:trails].map do |trail|
+      Hike.new(trail, @location)
+    end   
   end
 
-  def weather_service
-    hiking_service
+  def forecast
+    trails
     @weather_service = OwocService.new(@lat_lng).get_forecast
+    data = Forecast.new(@weather_service).current_weather
   end 
-  
-  def map_service
-    weather_service
-    binding.pry
-    @distance_to_trail = MapService.new(@hike).get_location
-  end
-
-  
-
 end

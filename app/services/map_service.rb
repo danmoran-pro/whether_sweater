@@ -1,17 +1,17 @@
 class MapService
 
-  def initialize(location)
-    @location = location
+  def initialize(from, to)
+    @from = from
+    @to = to 
   end 
 
-  def get_location
+  def get_distance
     location_data = conn.get("directions/v2/route") do |req|
-			req.params[:from] = @location
-			req.params[:to] = @location
-			req.params[:routeType] = fastest
+			req.params[:from] = @from
+			req.params[:to] = @to
+			req.params[:routeType] = 'fastest'
 		end
     json = JSON.parse(location_data.body, symbolize_names: true)
-    lat_lng = json[:results][0][:geometry][:location]
   end 
   
 

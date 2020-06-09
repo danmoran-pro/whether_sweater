@@ -1,5 +1,5 @@
 class Forecast
-  attr_reader :id, :current_weather, :hourly_weather, :daily_weather, :weekly_weather
+  attr_reader :id, :current_weather, :hourly_weather, :daily_weather, :weekly_weather, :summary, :temperature
   
   def initialize(weather_service)
     @id = 1 
@@ -8,14 +8,16 @@ class Forecast
     @hourly_weather = hourly_weather
     @daily_weather = daily_weather
     @daily_weather = weekly_weather
+    @summary = current_weather[:summary]
+    @temperature = current_weather[:temperature]
   end
 
   def current_weather
-    {time:  Time.at(@weather_data[:current][:dt]),
+    { #time:  Time.at(@weather_data[:current][:dt]),
     temperature: @weather_data[:current][:temp],
-    discription: @weather_data[:current][:weather][0][:description],
-    high: @weather_data[:daily][0][:temp][:max],
-    low: @weather_data[:daily][0][:temp][:min]}
+    summary: @weather_data[:current][:weather][0][:description]}
+    # high: @weather_data[:daily][0][:temp][:max],
+    # low: @weather_data[:daily][0][:temp][:min]}
     # location: #??
   end
 
