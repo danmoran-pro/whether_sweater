@@ -216,6 +216,7 @@
           1,
           1,
           1,
+          1,
           null,
           null,
           null
@@ -227,33 +228,18 @@
           null
         ]
       },
-      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/controllers/api/v1/background_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/facades/background_facade.rb": {
+      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/controllers/api/v1/trails_controller.rb": {
         "lines": [
           1,
           null,
           1,
-          null,
-          1,
-          1,
           1,
           null,
-          null,
-          1,
-          0,
           null,
           null
         ]
       }
     },
-    "timestamp": 1591713455
+    "timestamp": 1591718581
   }
 }

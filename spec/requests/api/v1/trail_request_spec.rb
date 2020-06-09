@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Can get trial, and weather for a city", :vcr, type: 'request' do
+RSpec.describe "Can get trail, and weather for a city", :vcr, type: 'request' do
   before(:each) do 
     get "/api/v1/trails?location=denver,co"
 
@@ -21,20 +21,23 @@ RSpec.describe "Can get trial, and weather for a city", :vcr, type: 'request' do
 		  expect(@trail_data['attributes']['forecast']).to have_key('temperature')
    
     end 
-    it "Can get an weather for location " do 
+    # it "Can get an weather for location " do 
 
-      expect(@trail_data).to have_key('trails')
+    #   expect(@trail_data).to have_key('trails')
       
-		  expect(@trail_data['trails']).to have_key('name')
-		  expect(@trail_data['trails']).to have_key('summary')
-      expect(@trail_data['trails']).to have_key('difficulty')
-		  expect(@trail_data['trails']).to have_key('location')
-		  expect(@trail_data['trails']).to have_key('distance_to_trail')
-    end 
+		#   expect(@trail_data['trails']).to have_key('name')
+		#   expect(@trail_data['trails']).to have_key('summary')
+    #   expect(@trail_data['trails']).to have_key('difficulty')
+		#   expect(@trail_data['trails']).to have_key('location')
+		#   expect(@trail_data['trails']).to have_key('distance_to_trail')
+    # end 
   end 
 end 
 
 
+# UNSPLASH_API_KEY
+# MAPQUEST_API_KEY
+# HIKING_API_KEY
 
 ## Instructions
 
@@ -95,7 +98,7 @@ end
 #     }
 #   }
 # }
-```
+# ```
 
 ## APIs
 

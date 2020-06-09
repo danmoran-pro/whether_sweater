@@ -78,5 +78,7 @@ RSpec.configure do |config|
     config.configure_rspec_metadata!
     config.filter_sensitive_data("<GOOGLE_API_KEY>") { ENV['GOOGLE_API_KEY'] }
     config.filter_sensitive_data("<OWOC_API_KEY>") { ENV['OWOC_API_KEY'] }
+    config.filter_sensitive_data("<HIKING_API_KEY>") { ENV['HIKING_API_KEY'] }
+    config.filter_sensitive_data("<MAPQUEST_API_KEY>") { ENV['MAPQUEST_API_KEY'] }
     end
 end
