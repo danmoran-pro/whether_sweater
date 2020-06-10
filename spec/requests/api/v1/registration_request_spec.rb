@@ -25,33 +25,16 @@ RSpec.describe "Can create a user and return and api_key", :vcr, type: 'request'
 
     end 
   end 
-  # it 'should return a 400 response if email already exists' do
-   
-  #   User.create(email: 'sample@example.com', 
-  #               password: 'password', 
-  #               password_confirmation: 'password')
-
-  #   post '/api/v1/users', params: @new_user_1
-
-  #   expect(response.status).to eq(400)
-  #   expect(User.count).to eq(0)
-
-  #   user_data = JSON.parse(response.body)
+  it 'should return a status 400 if passwords do not match' do
     
-
-  #   expect(user_data).to have_key("error")
-  #   expect(user_data["error"]).to eql('Email Already Exists')
-  # end 
-  # it 'should return a status 400 if passwords do not match' do
+    post '/api/v1/users', params: @new_user_2, as: :json 
     
-  #   post '/api/v1/users', params: @new_user_2, as: :json 
+    expect(response.status).to eq(400)
+    expect(User.count).to eq(0)
     
-  #   expect(response.status).to eq(400)
-  #   expect(User.count).to eq(0)
+    user_data = JSON.parse(response.body)
     
-  #   user_data = JSON.parse(response.body)
-    
-  #   expect(user_data).to have_key("error")
-  #   expect(user_data["error"]).to eql('Passwords do not match')
-  # end
+    expect(user_data).to have_key("error")
+    expect(user_data["error"]).to eql("Password confirmation doesn't match Password")
+  end
 end 

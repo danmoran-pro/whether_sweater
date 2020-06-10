@@ -5,7 +5,7 @@ class Api::V1::UserController < ApplicationController
     if @user.save
         render status: 201, json: UserSerializer.new(@user)
     else
-        render status: 400, json: {error: user.errors.full_messages.to_sentence}
+        render status: 400, json: {error: @user.errors.full_messages.to_sentence}
     end
   end
 
