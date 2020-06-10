@@ -10,8 +10,7 @@ RSpec.describe "Can get weather for a city", :vcr, type: 'request' do
   end 
   describe "when requesting 'backgrounds?location=denver,co'" do
     it "Can get an image for location " do 
-  		expect(backgrounds_data).to have_key(:image_url)
-		  expect(backgrounds_data).to have_key(:title)
+  		expect(@backgrounds_data).to have_key('url')
     end 
   end 
 end 

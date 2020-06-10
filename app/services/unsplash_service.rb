@@ -1,13 +1,13 @@
-class Unsplash_Service
- 
+class UnsplashService
   def initialize(location)
     @location = location
-    binding.pry
   end
 
   def get_background
     background_data = conn.get("/search/photos") do |req|
       req.params[:query] = @location
+    end
+    json = JSON.parse(background_data.body, symbolize_names: true)
   end 
   
   private
@@ -17,5 +17,4 @@ class Unsplash_Service
 		  f.adapter  Faraday.default_adapter
     end
 	end
-
 end 

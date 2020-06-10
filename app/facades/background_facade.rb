@@ -4,10 +4,14 @@ class BackgroundFacade
   
   def initialize(location)
     @location = location
-    binding.pry
   end
 
   def unsplash_service
-    @unsplash_service = Unsplash.new(@location)
-  end 
+    @unsplash_service = UnsplashService.new(@location).get_background
+  end
+
+  def background
+    unsplash_service
+    Background.new(@unsplash_service)
+  end
 end 
