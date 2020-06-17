@@ -1,13 +1,12 @@
 class Api::V1::RoadtripController < ApplicationController
 
   def create 
-    api_key = params[:api_key]
-    user = User.find_by(api_key: api_key)
-    if user.api_key && user
-      road_trip = RoadtripFacade.new(road_trip_params)
+    user = User.find_by(api_key: params[:api_key])
+    if user && user.api_key
+      road_trip = RoadtripFacade.new(road_trip_params).roadtrip
       render status: 200, json: RoadtripSerializer.new(road_trip)
     else
-      render status: 400, json: {error: @user.errors.full_messages.to_sentence}
+      render json: { status: 400,  error: "no API key or an incorrect key is provide" }
     end
   end
 

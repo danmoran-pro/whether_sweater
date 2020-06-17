@@ -218,6 +218,7 @@
           1,
           1,
           1,
+          1,
           null,
           null,
           null
@@ -245,22 +246,199 @@
           null
         ]
       },
-      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/controllers/api/v1/sessions_controller.rb": {
+      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/controllers/api/v1/roadtrip_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/poros/roadtrip.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/facades/roadtrip_facade.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/facades/forecast_facade.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/services/google_service.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/services/owoc_service.rb": {
         "lines": [
           1,
           null,
           1,
           1,
           1,
-          1,
           null,
-          0,
+          null,
+          1,
+          1,
+          1,
           null,
           null,
           null
         ]
       },
-      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/serializers/user_serializer.rb": {
+      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/poros/forecast.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          3,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          8,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          8,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/daniels/turing/Mod3/Projects/whether_sweater/app/serializers/roadtrip_serializer.rb": {
         "lines": [
           1,
           1,
@@ -269,6 +447,6 @@
         ]
       }
     },
-    "timestamp": 1591796526
+    "timestamp": 1591902668
   }
 }

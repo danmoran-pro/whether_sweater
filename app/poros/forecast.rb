@@ -16,7 +16,6 @@ class Forecast
     discription: @weather_data[:current][:weather][0][:description],
     high: @weather_data[:daily][0][:temp][:max],
     low: @weather_data[:daily][0][:temp][:min]}
-    # location: #??
   end
 
   def daily_weather
@@ -26,7 +25,6 @@ class Forecast
     uv_index: @weather_data[:current][:uvi],
     sunrise: Time.at(@weather_data[:current][:sunrise]),
     sunset: Time.at(@weather_data[:current][:sunset])}
-    # visibility: #???
   end 
 
   def weekly_weather
