@@ -2,21 +2,25 @@ class Foodie
   attr_reader :id, :end_location, :travel_time, :forecast, :restaurant
   
   def initialize(zomato_data, distance_data)
-    @id = 1 
-    binding.pry
-    @travel_time = distance_data[:duration][:text]
+    @id = nil 
     @end_location = distance_data[:end_address]
-    @restaurant = 
-    # @daily_weather = daily_weather
-    # @daily_weather = weekly_weather
+    @travel_time = distance_data[:duration][:text]
+    binding.pry
+    @zomato_data = zomato_data
+    @weather_data =  OwocService.new(distance_data[:end_location]).get_forecast
+    @forecast = foodie_weather
+    @restaurant = foodie_resturant
   end
 
-  def current_weather
-    {time:  Time.at(@weather_data[:current][:dt]),
-    temperature: @weather_data[:current][:temp],
-    discription: @weather_data[:current][:weather][0][:description],
-    high: @weather_data[:daily][0][:temp][:max],
-    low: @weather_data[:daily][0][:temp][:min]}
-    # location: #??
+  def foodie_weather
+    @temperature = @weather_data[:current][:temp]
+    @summary = @weather_data[:current][:weather][0][:description]
   end
+
+  def foodie_resturant 
+    @address = zomato_data[:address]
+    binding.pry
+    #Need to get resturant name. 
+  end 
+
 end 
