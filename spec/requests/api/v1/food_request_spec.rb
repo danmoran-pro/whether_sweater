@@ -7,7 +7,7 @@ RSpec.describe "Can get food for a city", :vcr, type: 'request' do
 
     get "/api/v1/foodie?start=#{start},co&end=#{end_location}"
       
-    expect(response).to be_successful
+    expect(response).to be_successfull
     
     travel_time= JSON.parse(response.body)['data']
 
