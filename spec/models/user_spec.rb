@@ -15,6 +15,8 @@ RSpec.describe User, type: :model do
               password_confirmation: "password"}
 
     user = User.create(params)
+    #not sure why test isnt passing.
+    #also need to fix edge case.  
     expect(user.api_key).not_to be_nil
     end
   end

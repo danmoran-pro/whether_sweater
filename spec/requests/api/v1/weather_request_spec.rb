@@ -31,7 +31,7 @@ RSpec.describe "Can get weather for a city", :vcr, type: 'request' do
     expect(current_weather).to have_key('low')
     end 
     
-#     it "Can get hourly Weather " do 
+    it "Can get hourly Weather " do 
     
       hourly_weather = @forecast_data['hourly_weather']
       

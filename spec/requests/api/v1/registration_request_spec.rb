@@ -22,6 +22,7 @@ RSpec.describe "Can create a user and return and api_key", :vcr, type: 'request'
 
       expect(user_data).to_not eql(nil)
       expect(user_data).to have_key("api_key")
+      expect(user_data).to have_key("api_key")
 
     end 
   end 
