@@ -1,3 +1,4 @@
+![](app/images/sweater_weather_json.png)
 # Introduction
 This is a solo project assigned to Mod 3 students. Students were required to utilize multiple APIs. Most required an authentication token. We expose an API to aggregate data and for CRUD functionality. The complete set of project requirements and evaluation criteria can be found at https://backend.turing.io/module3/projects/sweater_weather/.
 
